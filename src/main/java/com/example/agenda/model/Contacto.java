@@ -1,5 +1,112 @@
 package com.example.agenda.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "personas")
 public class Contacto {
+	
+	private int idPersona;
+	private String nombre;
+	private String apellido1;
+	private String apellido2;
+	private String dni;
+	private String fechaNacimiento;
+	
+	public Contacto(int idPersona, String nombre, String apellido1, String apellido2, String dni,
+			String fechaNacimiento) {
+		super();
+		this.idPersona = idPersona;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
+		this.dni = dni;
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public Contacto(int idPersona, String nombre, String apellido1) {
+		super();
+		this.idPersona = idPersona;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+	}
+	
+	public Contacto() {}
+
+	@Id
+	@GeneratedValue
+	@Column(name = "idpersonas")
+	public int getIdPersona() {
+		return idPersona;
+	}
+
+	public void setIdPersona(int idPersona) {
+		this.idPersona = idPersona;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido1() {
+		return apellido1;
+	}
+
+	public void setApellido1(String apellido1) {
+		this.apellido1 = apellido1;
+	}
+
+	public String getApellido2() {
+		return apellido2;
+	}
+
+	public void setApellido2(String apellido2) {
+		this.apellido2 = apellido2;
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	public String getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(String fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Contacto [idPersona=");
+		builder.append(idPersona);
+		builder.append(", nombre=");
+		builder.append(nombre);
+		builder.append(", apellido1=");
+		builder.append(apellido1);
+		builder.append(", apellido2=");
+		builder.append(apellido2);
+		builder.append(", dni=");
+		builder.append(dni);
+		builder.append(", fechaNacimiento=");
+		builder.append(fechaNacimiento);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
 
 }
