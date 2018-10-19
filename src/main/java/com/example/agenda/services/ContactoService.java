@@ -2,13 +2,13 @@ package com.example.agenda.services;
 
 import java.util.List;
 
-import com.ejemplos.spring.model.User;
+import com.example.agenda.model.Contacto;
 
 public interface ContactoService {
 
 	public List<Contacto> list();
-	public Contacto get(int idPersona);
-	public boolean update(Contacto actual);
-	public boolean add(Contacto nuevo);
-	public boolean delete(int idPersona);
+	public Contacto get(int id);
+	public void update(Contacto actual);
+	public void add(Contacto nuevo);
+	public void delete(int idPersona);
 }

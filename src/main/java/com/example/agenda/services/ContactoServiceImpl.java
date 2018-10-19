@@ -7,8 +7,8 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ejemplos.spring.dao.ContactoDAO;
-import com.ejemplos.spring.model.Contacto;
+import com.example.agenda.dao.ContactoDAO;
+import com.example.agenda.model.Contacto;
 
 @Service
 @Transactional
@@ -28,21 +28,17 @@ public class ContactoServiceImpl implements ContactoService {
 	}
 
 	@Override
-	public boolean update(Contacto actual) {
+	public void update(Contacto actual) {
 		gestor.update(actual);
-		return true;
 	}
 
 	@Override
-	public boolean add(Contacto nuevo) {
-		gestor.add(nuevo));
-		return true;
+	public void add(Contacto nuevo) {
+		gestor.add(nuevo);
 	}
 
 	@Override
-	public boolean delete(int id) {
-		gestor.delete(id);
-		return true;
+	public void delete(int idPersona) {
+		gestor.delete(idPersona);
 	}
-
 }
