@@ -4,16 +4,21 @@ import java.sql.SQLException;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.agenda.model.*;
 
+@Repository
 public class ContactoDAOImpl implements ContactoDAO {
 	
-	@Autowired
+	@PersistenceContext	
 	private EntityManager entityManager;
+	
+	public ContactoDAOImpl() {}
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -24,7 +29,7 @@ public class ContactoDAOImpl implements ContactoDAO {
 
 	@Override
 	public Contacto get(int id) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stubsa
 		return null;
 	}
 
