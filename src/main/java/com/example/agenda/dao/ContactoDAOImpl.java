@@ -19,9 +19,10 @@ public class ContactoDAOImpl implements ContactoDAO {
 	}
 
 	@Override
-	public void update(Contacto contacto) {
+	public boolean update(Contacto contacto) {
 		// TODO Auto-generated method stub
-		
+		//Aqui va la consulta a la DB
+		return true;
 	}
 
 	@Override

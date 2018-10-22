@@ -13,13 +13,18 @@ import com.example.agenda.model.Contacto;
 @Service
 @Transactional
 public class ContactoServiceImpl implements ContactoService {
-	
+
 	@Autowired
 	private ContactoDAO gestor;
-	
+
 	@Override
 	public List<Contacto> list() {
-		return gestor.list();
+		try {
+			return gestor.list();
+		} catch (ClassNotFoundException | SQLException e) {
+			return new List<Contacto>();
+		}
+
 	}
 
 	@Override
@@ -28,17 +33,17 @@ public class ContactoServiceImpl implements ContactoService {
 	}
 
 	@Override
-	public void update(Contacto actual) {
-		gestor.update(actual);
+	public boolean update(Contacto actual) {
+		return gestor.update(actual);
 	}
 
 	@Override
-	public void add(Contacto nuevo) {
+	public boolean add(Contacto nuevo) {
 		gestor.add(nuevo);
 	}
 
 	@Override
-	public void delete(int idPersona) {
-		gestor.delete(idPersona);
+	public boolean delete(int idPersona) {
+
 	}
 }

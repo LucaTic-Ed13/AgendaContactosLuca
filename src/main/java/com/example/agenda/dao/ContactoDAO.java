@@ -10,7 +10,7 @@ public interface ContactoDAO {
 	
 	public Contacto get(int id);
 	
-	public void update(Contacto contacto);
+	public boolean update(Contacto contacto);
 	
 	public void add(Contacto contacto);
 	
