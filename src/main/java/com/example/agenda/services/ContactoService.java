@@ -8,7 +8,7 @@ public interface ContactoService {
 
 	public List<Contacto> list();
 	public Contacto get(int id);
-	public void update(Contacto actual);
-	public void add(Contacto nuevo);
-	public void delete(int idPersona);
+	public boolean update(Contacto actual);
+	public boolean add(Contacto nuevo);
+	public boolean delete(int idPersona);
 }
