@@ -20,7 +20,7 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter  {
     public InternalResourceViewResolver getViewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".html");
+        viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
