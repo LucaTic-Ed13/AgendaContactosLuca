@@ -21,7 +21,6 @@ public class ContactoServiceImpl implements ContactoService {
 
 	@Override
 	public List<Contacto> list() {
-		List <Contacto> pichita = new List<>();
 		try {
 			return gestor.list();
 		} catch (ClassNotFoundException | SQLException e) {
