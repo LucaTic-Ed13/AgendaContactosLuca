@@ -1,5 +1,7 @@
 package com.example.agenda.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,18 +9,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "personas")
-public class Contacto {
+@Table(name = "persona")
+public class Persona {
 	
 	private int idPersona;
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
 	private String dni;
-	private String fechaNacimiento;
+	private Date fechaNacimiento;
 	
-	public Contacto(int idPersona, String nombre, String apellido1, String apellido2, String dni,
-			String fechaNacimiento) {
+	public Persona(int idPersona, String nombre, String apellido1, String apellido2, String dni,
+			Date fechaNacimiento) {
 		super();
 		this.idPersona = idPersona;
 		this.nombre = nombre;
@@ -28,18 +30,18 @@ public class Contacto {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public Contacto(int idPersona, String nombre, String apellido1) {
+	public Persona(int idPersona, String nombre, String apellido1) {
 		super();
 		this.idPersona = idPersona;
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 	}
 	
-	public Contacto() {}
+	public Persona() {}
 
 	@Id
 	@GeneratedValue
-	@Column(name = "idpersonas")
+	@Column(name = "idpersona")
 	public int getIdPersona() {
 		return idPersona;
 	}
@@ -48,6 +50,7 @@ public class Contacto {
 		this.idPersona = idPersona;
 	}
 
+	@Column(name = "nombre")
 	public String getNombre() {
 		return nombre;
 	}
@@ -55,7 +58,8 @@ public class Contacto {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
+	
+	@Column(name = "apellido1")
 	public String getApellido1() {
 		return apellido1;
 	}
@@ -63,7 +67,8 @@ public class Contacto {
 	public void setApellido1(String apellido1) {
 		this.apellido1 = apellido1;
 	}
-
+	
+	@Column(name = "apellido2")
 	public String getApellido2() {
 		return apellido2;
 	}
@@ -71,7 +76,8 @@ public class Contacto {
 	public void setApellido2(String apellido2) {
 		this.apellido2 = apellido2;
 	}
-
+	
+	@Column(name = "dni")
 	public String getDni() {
 		return dni;
 	}
@@ -79,12 +85,13 @@ public class Contacto {
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
-
-	public String getFechaNacimiento() {
+	
+	@Column(name = "fechanacimiento")
+	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(String fechaNacimiento) {
+	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 

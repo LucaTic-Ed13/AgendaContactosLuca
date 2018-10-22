@@ -13,35 +13,37 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.agenda.model.*;
 
 @Repository
-public class ContactoDAOImpl implements ContactoDAO {
+public class PersonaDAOImpl implements PersonaDAO {
 	
 	@PersistenceContext	
 	private EntityManager entityManager;
 	
-	public ContactoDAOImpl() {}
+	public PersonaDAOImpl() {}
 
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	@Transactional
-	public List<Contacto> list() throws ClassNotFoundException, SQLException {
-		return (List<Contacto>) entityManager.createQuery("FROM personas ORDER BY id_personas").getResultList();
+	public List<Persona > list() throws ClassNotFoundException, SQLException {
+		//entityManager.createQuery("").getRes
+		return (List<Persona >) entityManager.createQuery("FROM Persona ORDER BY idpersona").getResultList();
 	}
 
 	@Override
-	public Contacto get(int id) {
+	public Persona  get(int id) {
 		// TODO Auto-generated method stubsa
 		return null;
 	}
 
 	@Override
-	public boolean update(Contacto contacto) {
+	public boolean update(Persona  contacto) {
 		// TODO Auto-generated method stub
 		//Aqui va la consulta a la DB
 		return true;
 	}
 
 	@Override
-	public boolean insert(Contacto contacto) {
+	public boolean insert(Persona  contacto) {
 		// TODO Auto-generated method stub
 		return true;
 	}

@@ -13,23 +13,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.agenda.model.Contacto;
-import com.example.agenda.services.ContactoService;
+import com.example.agenda.model.Persona;
+import com.example.agenda.services.PersonaService;
 
 @Controller
 public class HomeController {
 
 	@Autowired
-	private ContactoService contactoService;
+	private PersonaService personaService;
 	
 	
 	
 	
 	@RequestMapping("/agenda")
 	public ModelAndView handleRequest() throws Exception {
-		List<Contacto> listContactos = contactoService.list();
-		ModelAndView model = new ModelAndView("ContactoList");
-		model.addObject("contactoList", listContactos);
+		List<Persona > listPersonas = personaService.list();
+		ModelAndView model = new ModelAndView("PersonasList");
+		model.addObject("personaList", listPersonas);
 		return model;
 		
 	}
