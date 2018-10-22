@@ -25,7 +25,7 @@ public class HomeController {
 	
 	
 	
-	/*@RequestMapping("/agenda")
+	@RequestMapping("/agenda")
 	public ModelAndView handleRequest() throws Exception {
 		List<Contacto> listContactos = contactoService.list();
 		ModelAndView model = new ModelAndView("ContactoList");
@@ -33,10 +33,10 @@ public class HomeController {
 		return model;
 		
 	}
-	*/
 	
-	@GetMapping("/")
-	public String home() {
-		return "home";
-	}
+	
+//	@GetMapping("/")
+//	public String home() {
+//		return "home";
+//	}
 }

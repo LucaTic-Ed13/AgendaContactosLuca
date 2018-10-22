@@ -5,12 +5,14 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.agenda.model.*;
 
 public class ContactoDAOImpl implements ContactoDAO {
 	
+	@Autowired
 	private EntityManager entityManager;
 
 	@SuppressWarnings("unchecked")
