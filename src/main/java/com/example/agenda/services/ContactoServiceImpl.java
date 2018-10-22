@@ -21,7 +21,10 @@ public class ContactoServiceImpl implements ContactoService {
 
 	@Override
 	public List<Contacto> list() {
+<<<<<<< HEAD
 		List <Contacto> contacto = new List<>();
+=======
+>>>>>>> 192bcbac5c119e95a36e6bda5cbe78e6c8e57b47
 		try {
 			return gestor.list();
 		} catch (ClassNotFoundException | SQLException e) {
