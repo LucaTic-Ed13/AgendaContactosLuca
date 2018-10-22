@@ -1,5 +1,7 @@
 package com.example.agenda.services;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -22,7 +24,8 @@ public class ContactoServiceImpl implements ContactoService {
 		try {
 			return gestor.list();
 		} catch (ClassNotFoundException | SQLException e) {
-			return new List<Contacto>();
+			e.printStackTrace();
+			return new ArrayList<>();
 		}
 
 	}
@@ -39,11 +42,12 @@ public class ContactoServiceImpl implements ContactoService {
 
 	@Override
 	public boolean add(Contacto nuevo) {
-		gestor.add(nuevo);
+		gestor.insert(nuevo);
+		return true;
 	}
 
 	@Override
 	public boolean delete(int idPersona) {
-
+		return true;
 	}
 }
