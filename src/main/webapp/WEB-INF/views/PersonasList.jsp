@@ -21,7 +21,6 @@
 
 			<c:forEach var="persona" items="${personaList}" varStatus="status">
 				<tr>
-					<td>${persona.idpersona}</td>
 					<td>${persona.nombre}</td>
 					<td>${persona.apellido1}</td>
 					<td>${persona.apellido2}</td>
