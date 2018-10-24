@@ -1,10 +1,29 @@
 package com.example.agenda.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Contacto {
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.MapsId;
+
+
+@Entity
+public class Contacto implements Serializable{
 	
+	
+	@AttributeOverrides({
+        @AttributeOverride(name="nombre", column=@Column(name="nombre")),
+        @AttributeOverride(name="apellido1", column=@Column(name="apellido1")),
+        @AttributeOverride(name="apellido2", column=@Column(name="apellido2"))
+    })
+
+	@EmbeddedId
 	private Persona persona;
+	@MapsId("idPersona")
 	private ArrayList <Telefono> telefonos;
 	private ArrayList <Direccion> direcciones;
 	
