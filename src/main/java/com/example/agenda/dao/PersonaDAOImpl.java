@@ -25,14 +25,12 @@ public class PersonaDAOImpl implements PersonaDAO {
 	@Override
 	@Transactional
 	public List<Persona > list() throws ClassNotFoundException, SQLException {
-		//entityManager.createQuery("").getRes
 		return (List<Persona >) entityManager.createQuery("FROM Persona ORDER BY idpersona").getResultList();
 	}
 
 	@Override
-	public Persona  get(int id) {
-		// TODO Auto-generated method stubsa
-		return null;
+	public Persona get(int id) throws ClassNotFoundException, SQLException{
+		return (Persona) entityManager.createQuery("FROM Persona WHERE idpersona = "+id).getResultList().get(0);
 	}
 
 	@Override

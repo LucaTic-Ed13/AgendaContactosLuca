@@ -9,7 +9,7 @@ public interface PersonaDAO {
 
 	public List<Persona > list() throws ClassNotFoundException, SQLException;
 	
-	public Persona  get(int id);
+	public Persona  get(int id) throws ClassNotFoundException, SQLException;
 	
 	public boolean update(Persona contacto);
 	
