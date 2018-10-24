@@ -16,6 +16,6 @@ import com.example.agenda.model.*;
 //The @RepositoryRestResource annotation creates endpoints for the Beer entity at http://localhost:8080/beers.
 //Por ese motivo pongo esa direccion en las llamadas de beer-edit.service.ts
 
-public interface PersonaJPA extends JpaRepository<Persona, Integer> {
+public interface ContactoJPA extends JpaRepository<Contacto, Integer> {
     
 }

@@ -18,6 +18,10 @@ import javax.persistence.OneToOne;
 public class Contacto implements Serializable{
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@AttributeOverrides({
         @AttributeOverride(name="nombre", column=@Column(name="nombre")),
         @AttributeOverride(name="apellido1", column=@Column(name="apellido1")),
