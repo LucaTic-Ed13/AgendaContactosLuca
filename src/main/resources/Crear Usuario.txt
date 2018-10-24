@@ -1,3 +1,0 @@
-CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON * . * TO 'usuario'@'localhost';
-FLUSH PRIVILEGES;
