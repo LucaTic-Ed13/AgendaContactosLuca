@@ -1,5 +1,6 @@
 package com.example.agenda.model;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,6 +38,7 @@ public class Telefono {
 	
 	public Telefono() {}
 
+	@Column(name = "idtelefono")
 	public int getIdTelefono() {
 		return idTelefono;
 	}
@@ -45,6 +47,7 @@ public class Telefono {
 		this.idTelefono = idTelefono;
 	}
 
+	@Column(name = "telefono")
 	public String getTelefono() {
 		return telefono;
 	}
@@ -53,6 +56,7 @@ public class Telefono {
 		this.telefono = telefono;
 	}
 
+	@Column(name = "idpersona")
 	public int getIdPersona() {
 		return idPersona;
 	}

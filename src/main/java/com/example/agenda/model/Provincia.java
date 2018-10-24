@@ -4,6 +4,7 @@ package com.example.agenda.model;
   `provincia` varchar(255) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
  */
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -26,6 +27,7 @@ public class Provincia {
 	
 	public Provincia() {}
 
+	@Column(name = "idprovincia")
 	public int getIdProvincia() {
 		return idProvincia;
 	}
@@ -34,6 +36,7 @@ public class Provincia {
 		this.idProvincia = idProvincia;
 	}
 
+	@Column(name = "nombre")
 	public String getNombre() {
 		return nombre;
 	}
