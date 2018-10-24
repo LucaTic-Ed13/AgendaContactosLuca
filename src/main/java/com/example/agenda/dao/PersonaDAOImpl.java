@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.agenda.model.*;
 
+@Deprecated
 @Repository
 public class PersonaDAOImpl implements PersonaDAO {
 	

@@ -33,6 +33,7 @@ public class HomeController {
 				.stream()
 				.collect(Collectors.toList());
 	}
+<<<<<<< HEAD
 	
 	
 	/*@GetMapping("/contactos/{id}")
@@ -44,3 +45,6 @@ public class HomeController {
 				.stream()
 				.collect(Collectors.toList());
 	}*/
+=======
+}
+>>>>>>> c470c13c9853642b31c214aa95b63b6e40e1df85
