@@ -34,7 +34,13 @@ public class PersonaServiceImpl implements PersonaService {
 
 	@Override
 	public Persona  get(int id) {
-		return gestor.get(id);
+		try {
+			return gestor.get(id);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return new Persona();
+		}
 	}
 
 	@Override
