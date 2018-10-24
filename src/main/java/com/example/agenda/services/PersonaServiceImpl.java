@@ -13,7 +13,7 @@ import com.example.agenda.dao.PersonaDAO;
 import com.example.agenda.model.Persona;
 
 
-
+@Deprecated
 @Service
 @Transactional
 public class PersonaServiceImpl implements PersonaService {

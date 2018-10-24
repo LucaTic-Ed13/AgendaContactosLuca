@@ -1,14 +1,14 @@
 package com.example.agenda.services;
 
 import java.util.List;
-
+import com.example.agenda.dao.PersonaJPAImpl;
 import com.example.agenda.model.Persona;
 
 public class PersonaServiceJPA implements PersonaService {
 
 	@Override
 	public List<Persona> list() {
-		// TODO Auto-generated method stub
+		PersonaJPAImpl.this
 		return null;
 	}
 
