@@ -7,6 +7,7 @@ import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +15,9 @@ import javax.persistence.Table;
 @Table(name = "persona")
 public class Persona {
 	
+	@Id
+	@GeneratedValue
+	@OneToOne
 	private int idPersona;
 	private String nombre;
 	private String apellido1;

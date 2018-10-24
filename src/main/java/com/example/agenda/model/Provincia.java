@@ -4,8 +4,17 @@ package com.example.agenda.model;
   `provincia` varchar(255) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
  */
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "provincia")
 public class Provincia {
 	
+	@Id
+	@GeneratedValue
 	private int idProvincia;
 	private String nombre;
 	

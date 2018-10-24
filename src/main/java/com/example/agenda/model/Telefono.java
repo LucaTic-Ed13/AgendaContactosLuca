@@ -1,16 +1,32 @@
 package com.example.agenda.model;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 /*
   `idtelefono` int(11) NOT NULL AUTO_INCREMENT,
   `telefono` varchar(45) DEFAULT NULL,
   `idpersona` int(11) DEFAULT NULL,
  */
 
+@Entity
+@Embeddable
+@Table(name = "telefono")
 public class Telefono {
 	
+	@Id
+	@GeneratedValue
 	private int idTelefono;
+	
 	private String telefono;
+	
+	@ManyToOne
 	private int idPersona;
+	
 	
 	public Telefono(int idTelefono, String telefono, int idPersona) {
 		super();

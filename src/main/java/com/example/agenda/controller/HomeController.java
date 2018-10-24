@@ -33,18 +33,18 @@ public class HomeController {
 				.stream()
 				.collect(Collectors.toList());
 	}
-<<<<<<< HEAD
+
 	
 	
 	/*@GetMapping("/contactos/{id}")
 	@CrossOrigin(origins = "http://localhost:4200")
 	
-	public Contacto contactoPorId(@PathVariable int id){
+	public Contacto contactoPorId(@PathVariable  int id){
 		return contactoService
 				.findById(id)
 				.stream()
 				.collect(Collectors.toList());
 	}*/
-=======
+
 }
->>>>>>> c470c13c9853642b31c214aa95b63b6e40e1df85
+

@@ -1,4 +1,12 @@
 package com.example.agenda.model;
+
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 /*
   `iddireccion` int(11) NOT NULL AUTO_INCREMENT,
   `direccion` varchar(45) NOT NULL,
@@ -7,13 +15,19 @@ package com.example.agenda.model;
   `idprovincia` int(11) NOT NULL,
   `idpersona` int(11) DEFAULT NULL,
  */
+@Entity
+@Embeddable
+@Table (name = "direccion")
 public class Direccion {
 	
+	@Id
+	@GeneratedValue
 	private int idDireccion;
 	private String direccion;
 	private String codPostal;
 	private String localidad;
 	private int idProvincia;
+	@ManyToOne
 	private int idPersona;
 	
 	public Direccion(int idDireccion, String direccion, String codPostal, String localidad, int idProvincia, int idPersona) {

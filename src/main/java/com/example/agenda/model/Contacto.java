@@ -6,9 +6,12 @@ import java.util.ArrayList;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -18,13 +21,23 @@ public class Contacto implements Serializable{
 	@AttributeOverrides({
         @AttributeOverride(name="nombre", column=@Column(name="nombre")),
         @AttributeOverride(name="apellido1", column=@Column(name="apellido1")),
-        @AttributeOverride(name="apellido2", column=@Column(name="apellido2"))
+        @AttributeOverride(name="apellido2", column=@Column(name="apellido2")),
+        @AttributeOverride(name="direccion", column=@Column(name="direccion")),
+        @AttributeOverride(name="codPostal", column=@Column(name="codPostal")),
+        @AttributeOverride(name="telefono", column=@Column(name="telefono"))
     })
-
+	
 	@EmbeddedId
+	@OneToOne(mappedBy="idPersona")
 	private Persona persona;
 	@MapsId("idPersona")
+	
+	@Embedded
+	@OneToMany(mappedBy="idPersona")
 	private ArrayList <Telefono> telefonos;
+	
+	@Embedded
+	@OneToMany(mappedBy="idPersona")
 	private ArrayList <Direccion> direcciones;
 	
 	
