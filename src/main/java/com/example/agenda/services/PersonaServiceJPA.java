@@ -1,38 +1,37 @@
-package com.example.agenda.dao;
+package com.example.agenda.services;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import com.example.agenda.model.Persona;
 
-public class PersonaDaoImplCRUD implements PersonaDAO{
+public class PersonaServiceJPA implements PersonaService {
 
 	@Override
-	public List<Persona> list() throws ClassNotFoundException, SQLException {
+	public List<Persona> list() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Persona get(int id) throws ClassNotFoundException, SQLException {
+	public Persona get(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean update(Persona contacto) {
+	public boolean update(Persona actual) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean insert(Persona contacto) {
+	public boolean add(Persona nuevo) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean delete(int id) {
+	public boolean delete(int idPersona) {
 		// TODO Auto-generated method stub
 		return false;
 	}

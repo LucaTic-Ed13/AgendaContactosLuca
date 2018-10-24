@@ -29,12 +29,17 @@ public class PersonaServiceImpl implements PersonaService {
 			e.printStackTrace();
 			return new ArrayList<>();
 		}
-
 	}
 
 	@Override
-	public Persona  get(int id) {
-		return gestor.get(id);
+	public Persona get(int id) {
+		try {
+			return gestor.get(id);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return new Persona();
+		}
 	}
 
 	@Override
