@@ -31,10 +31,4 @@ public class HomeController {
 		return model;
 		
 	}
-	
-/*
-	@GetMapping("/")
-	public String home() {
-		return "home";
-	}*/
 }
