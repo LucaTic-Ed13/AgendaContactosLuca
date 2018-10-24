@@ -30,8 +30,6 @@ public class HomeController {
 	public Collection<Contacto> contactos(){
 		return contactoService
 				.findAll()
-				.stream()
-				.collect(Collectors.toList());
 	}
 
 	
