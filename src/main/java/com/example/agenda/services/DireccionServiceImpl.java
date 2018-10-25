@@ -1,5 +1,6 @@
 package com.example.agenda.services;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.agenda.dao.DireccionDAOImpl;
 import com.example.agenda.dao.DireccionDAOJPA;
 import com.example.agenda.model.Direccion;
 
@@ -40,10 +42,8 @@ public class DireccionServiceImpl implements DireccionService {
 	@Transactional
 	@Override
 	public List<Direccion> getAllDirecciones() {
-		List<Direccion> prueba = new ArrayList<>();
-		prueba.add(new Direccion(0, "Hola", "Cara", "Cola", 1, 2));
-		prueba.addAll(repository.findAll());
-		return prueba;
+		System.out.println("-- Inside DireccionServiceImpl: getAllDirecciones ");
+		return repository.findAll();
 	}
 
 }

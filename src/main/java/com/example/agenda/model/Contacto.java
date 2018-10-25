@@ -71,9 +71,9 @@ public class Contacto {
 		builder.append("Contacto [persona=");
 		builder.append(persona);
 		builder.append(", telefonos=");
-		builder.append(telefonos.toString());
+		builder.append(telefonos.get(0).toString());
 		builder.append(", direcciones=");
-		builder.append(direcciones.toString());
+		builder.append(direcciones.get(0).toString());
 		builder.append("]");
 		return builder.toString();
 	}

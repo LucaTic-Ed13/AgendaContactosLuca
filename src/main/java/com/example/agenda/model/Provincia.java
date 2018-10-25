@@ -36,7 +36,7 @@ public class Provincia {
 		this.idProvincia = idProvincia;
 	}
 
-	@Column(name = "nombre")
+	@Column(name = "provincia")
 	public String getNombre() {
 		return nombre;
 	}

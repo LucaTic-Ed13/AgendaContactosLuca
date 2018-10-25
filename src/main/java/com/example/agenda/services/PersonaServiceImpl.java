@@ -1,5 +1,7 @@
 package com.example.agenda.services;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -7,7 +9,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.agenda.dao.PersonaDAOImpl;
 import com.example.agenda.dao.PersonaDAOJPA;
+import com.example.agenda.model.Direccion;
 import com.example.agenda.model.Persona;
 
 @Service

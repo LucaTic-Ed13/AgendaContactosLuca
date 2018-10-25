@@ -28,12 +28,12 @@ public class ContactoFactory {
 		return coleccionContactos(humanidad, celulares, calles, ejpania);
 	}
 
-	private List<Contacto> coleccionContactos(ArrayList<Persona> personas, ArrayList<Telefono> telefonos, ArrayList<Direccion> direcciones, ArrayList<Provincia> provincias) {
+	public List<Contacto> coleccionContactos(ArrayList<Persona> personas, ArrayList<Telefono> telefonos, ArrayList<Direccion> direcciones, ArrayList<Provincia> provincias) {
 		System.out.println("Entro en coleccion");
 		ArrayList<Contacto> agenda = new ArrayList<>();
 		Contacto actual;
 		for(int i = 0; i < personas.size(); i++) {
-			actual = new Contacto();
+			actual = new Contacto(personas.get(i));
 			actual.setPersona(personas.get(i));
 			for(Direccion dir:direcciones) {
 				if(dir.getIdPersona() == personas.get(i).getIdPersona()) {
