@@ -7,11 +7,11 @@
       <div class="card-body d-flex flex-column align-items-start">
         <strong class="d-inline-block mb-2 text-primary">Contacto {{i+1}}</strong>
         <h3 class="mb-0">
-          <a class="text-dark" href="#">{{contacto.name}} </a>
+          <a class="text-dark" href="#">{{contacto.nombre}} {{contacto.apellido1}} {{contacto.apellido2}} </a>
         </h3>
         <div class="mb-1 text-muted">Nov {{i+13}}</div>
         <p class="card-text mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio doloribus molestiae tenetur</p>
-          <a [routerLink]="['/contacto-edit', contacto.id]">Editar contacto {{contacto.name}}</a>       
+          <a [routerLink]="['/contacto-edit', contacto.id]">Editar contacto {{contacto.nombre}}</a>       
       </div>
       <img class="card-img-right flex-auto d-none d-md-block" width="200" src="{{contacto.giphyUrl}}" alt="{{contacto.name}}" title="{{contacto.name}}">
     </div>
