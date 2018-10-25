@@ -31,7 +31,7 @@ public class Contacto implements Serializable{
         @AttributeOverride(name="apellido2", column=@Column(name="apellido2"))
 	 })
 	@OneToOne(
-			mappedBy="idpersona",
+			mappedBy="idPersona",
 			cascade = CascadeType.ALL 
 			)
 	private Persona persona;
@@ -42,7 +42,7 @@ public class Contacto implements Serializable{
         @AttributeOverride(name="telefono", column=@Column(name="telefono"))
     })
 	@OneToMany(
-			mappedBy = "idpersona",
+			mappedBy = "idPersona",
 	        cascade = CascadeType.ALL 
 	    )
 	//@OneToMany(mappedBy="idPersona")
@@ -54,7 +54,7 @@ public class Contacto implements Serializable{
         @AttributeOverride(name="codpostal", column=@Column(name="codPostal"))
     })
 	@OneToMany(
-			mappedBy = "idpersona",
+			mappedBy = "idPersona",
 	        cascade = CascadeType.ALL
 	    )
 	//@OneToMany(mappedBy="idPersona")
