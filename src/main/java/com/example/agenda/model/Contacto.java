@@ -12,6 +12,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -29,7 +30,10 @@ public class Contacto implements Serializable{
         @AttributeOverride(name="apellido1", column=@Column(name="apellido1")),
         @AttributeOverride(name="apellido2", column=@Column(name="apellido2"))
 	 })
-	//@OneToOne(mappedBy="idPersona")
+	@OneToOne(
+			mappedBy="idpersona",
+			cascade = CascadeType.ALL 
+			)
 	private Persona persona;
 	@MapsId("idPersona")
 	
