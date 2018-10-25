@@ -32,8 +32,8 @@ const appRoutes: Routes =  [
 @NgModule({
   declarations: [
     AppComponent,
-    ContactoEditComponent,
     ContactoListComponent,
+    ContactoEditComponent,
     ContactoListV2Component
   ],
   imports: [
