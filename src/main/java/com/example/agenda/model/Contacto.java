@@ -5,13 +5,13 @@ import java.util.ArrayList;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 
 @Entity
@@ -37,6 +37,10 @@ public class Contacto implements Serializable{
 	@AttributeOverrides({
         @AttributeOverride(name="telefono", column=@Column(name="telefono"))
     })
+	@OneToMany(
+			mappedBy = "idpersona",
+	        cascade = CascadeType.ALL 
+	    )
 	//@OneToMany(mappedBy="idPersona")
 	private ArrayList <Telefono> telefonos;
 	
@@ -45,6 +49,10 @@ public class Contacto implements Serializable{
         @AttributeOverride(name="direccion", column=@Column(name="direccion")),
         @AttributeOverride(name="codpostal", column=@Column(name="codPostal"))
     })
+	@OneToMany(
+			mappedBy = "idpersona",
+	        cascade = CascadeType.ALL
+	    )
 	//@OneToMany(mappedBy="idPersona")
 	private ArrayList <Direccion> direcciones;
 	
