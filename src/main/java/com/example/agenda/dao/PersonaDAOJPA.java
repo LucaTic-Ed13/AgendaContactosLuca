@@ -8,6 +8,6 @@ import com.example.agenda.model.*;
 @RepositoryRestResource
 @CrossOrigin(origins = "http:localhost:4200")
 
-public interface PersonaDAOJPA extends JpaRepository <Persona, Long> {
+public interface PersonaDAOJPA extends JpaRepository <Persona, Integer> {
 
 }

@@ -45,12 +45,11 @@ public class Persona {
 	public int getIdPersona() {
 		return idPersona;
 	}
-
+	
 	public void setIdPersona(int idPersona) {
 		this.idPersona = idPersona;
 	}
 
-	@Column(name = "nombre")
 	public String getNombre() {
 		return nombre;
 	}
@@ -59,7 +58,6 @@ public class Persona {
 		this.nombre = nombre;
 	}
 	
-	@Column(name = "apellido1")
 	public String getApellido1() {
 		return apellido1;
 	}
@@ -68,7 +66,7 @@ public class Persona {
 		this.apellido1 = apellido1;
 	}
 	
-	@Column(name = "apellido2")
+
 	public String getApellido2() {
 		return apellido2;
 	}
@@ -77,7 +75,6 @@ public class Persona {
 		this.apellido2 = apellido2;
 	}
 	
-	@Column(name = "dni")
 	public String getDni() {
 		return dni;
 	}
