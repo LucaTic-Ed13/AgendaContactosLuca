@@ -16,6 +16,8 @@ import com.example.agenda.services.*;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+
 public class HomeController {
 
 	@Autowired
@@ -30,9 +32,3 @@ public class HomeController {
 	}
 }
 	
-/*
-	@GetMapping("/")
-	public String home() {
-		return "home";
-	}*/
-
