@@ -10,8 +10,6 @@ import javax.persistence.Embedded;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.MapsId;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 
 @Entity
@@ -92,6 +90,14 @@ public class Contacto implements Serializable{
 
 	public void setDirecciones(ArrayList<Direccion> direcciones) {
 		this.direcciones = direcciones;
+	}
+	
+	public void addDireccion(Direccion nueva) {
+		this.direcciones.add(nueva);
+	}
+	
+	public void addTelefono(Telefono nuevo) {
+		this.telefonos.add(nuevo);
 	}
 
 

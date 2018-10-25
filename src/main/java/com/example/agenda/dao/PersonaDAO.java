@@ -12,10 +12,10 @@ public interface PersonaDAO {
 	
 	public Persona  get(int id) throws ClassNotFoundException, SQLException;
 	
-	public boolean update(Persona contacto);
+	public boolean update(Persona contacto) throws ClassNotFoundException, SQLException;
 	
-	public boolean insert(Persona  contacto);
+	public boolean insert(Persona  contacto) throws ClassNotFoundException, SQLException;
 	
-	public boolean delete(int id);
+	public boolean delete(int id) throws ClassNotFoundException, SQLException;
 	
 }

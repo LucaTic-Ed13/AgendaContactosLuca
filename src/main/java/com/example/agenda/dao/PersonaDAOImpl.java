@@ -30,26 +30,34 @@ public class PersonaDAOImpl implements PersonaDAO {
 	}
 
 	@Override
+	@Transactional
 	public Persona get(int id) throws ClassNotFoundException, SQLException{
-		return (Persona) entityManager.createQuery("FROM Persona WHERE idpersona = "+id).getResultList().get(0);
+		return (Persona) entityManager.find(Persona.class, id);
 	}
 
 	@Override
-	public boolean update(Persona  contacto) {
-		// TODO Auto-generated method stub
-		//Aqui va la consulta a la DB
+	public boolean update(Persona  contacto) throws ClassNotFoundException, SQLException {
+		Persona usuario = get(contacto.getIdPersona());
+
+		usuario.setNombre(contacto.getNombre());
+		usuario.setApellido1(contacto.getApellido1());
+		usuario.setApellido2(contacto.getApellido2());
+		usuario.setDni(contacto.getDni());
+		usuario.setFechaNacimiento(contacto.getFechaNacimiento());
+		entityManager.flush();
 		return true;
 	}
 
 	@Override
-	public boolean insert(Persona  contacto) {
-		// TODO Auto-generated method stub
+	public boolean insert(Persona  contacto) throws ClassNotFoundException, SQLException{
+		entityManager.merge(contacto);
 		return true;
 	}
 
 	@Override
-	public boolean delete(int id) {
-		// TODO Auto-generated method stub
+	@Transactional
+	public boolean delete(int id) throws ClassNotFoundException, SQLException {
+		entityManager.remove(get(id));
 		return true;
 	}
 
