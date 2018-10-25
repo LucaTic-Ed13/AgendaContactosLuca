@@ -12,7 +12,7 @@ export class ContactoListV2Component implements OnInit {
 
   contactos: Array<any>;
   
-  constructor(private contactoService, private contactoEditService: ContactoEditService, private giphyService: GiphyService) { }
+  constructor(private contactoService: ContactoService, private contactoEditService: ContactoEditService, private giphyService: GiphyService) { }
 
   ngOnInit() {
         //Implementa un patron Observer

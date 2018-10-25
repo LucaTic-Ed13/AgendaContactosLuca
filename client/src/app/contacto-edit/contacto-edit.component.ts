@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ContactoService } from '../shared/contacto/contacto.service';
-import { ContactoEditService } from '../shared/contacto-edit/contacto-edit.service';
-import { GiphyService } from '../shared/giphy/giphy.service';
+import { ContactoService } from '../shared';
+import { ContactoEditService } from '../shared';
+import { GiphyService } from '../shared';
 import { NgForm } from '@angular/forms';
 
 
