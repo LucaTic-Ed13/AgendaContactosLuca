@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactoEditComponent } from './contacto-edit/contacto-edit.component';
 import { ContactoListComponent } from './contacto-list/contacto-list.component';
+import { ContactoListV2Component } from './contacto-list-v2/contacto-list-v2.component';
 
 
 const appRoutes: Routes =  [
@@ -32,7 +33,8 @@ const appRoutes: Routes =  [
   declarations: [
     AppComponent,
     ContactoEditComponent,
-    ContactoListComponent
+    ContactoListComponent,
+    ContactoListV2Component
   ],
   imports: [
     BrowserModule,
