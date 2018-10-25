@@ -1,5 +1,4 @@
-<h2>Contacto List (Version v2)(Listado+Edit)</h2>
-<p>Esta es tu lista de contactos actual</p>
+<h3>Esta es tu lista de contactos actual:</h3>
 <!-- <div class="botonSeparado"><button color="primary" [routerLink]="['/contacto-add']">Add New Contacto</button></div> -->
 <div class="row mb-2">
   <div *ngFor="let contacto of contactos; let i = index" class="col-md-6">
@@ -9,7 +8,7 @@
         <h3 class="mb-0">
           <a class="text-dark" href="#">{{contacto.nombre}} {{contacto.apellido1}} {{contacto.apellido2}} </a>
         </h3>
-        <div class="mb-1 text-muted">Nov {{i+13}}</div>
+        <span class="badge badge-info">Nov {{i+13}}</span>
         <p class="card-text mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio doloribus molestiae tenetur</p>
           <a [routerLink]="['/contacto-edit', contacto.id]">Editar contacto {{contacto.nombre}}</a>       
       </div>
