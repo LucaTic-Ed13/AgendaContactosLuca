@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Contacto {
 	
 	private Persona persona;
-	private ArrayList <Telefono> telefonos;
-	private ArrayList <Direccion> direcciones;
+	private ArrayList <String> telefonos;
+	private ArrayList <String[]> direcciones;
 	
 	
-	public Contacto(Persona persona, ArrayList<Telefono> telefonos, ArrayList<Direccion> direcciones) {
+	public Contacto(Persona persona, ArrayList<String> telefonos, ArrayList<String[]> direcciones) {
 		super();
 		this.persona = persona;
 		this.telefonos = telefonos;
@@ -20,6 +20,8 @@ public class Contacto {
 	public Contacto(Persona persona) {
 		super();
 		this.persona = persona;
+		this.telefonos = new ArrayList<String>();
+		this.direcciones = new ArrayList <String[]>();
 	}
 	
 	public Contacto() {}
@@ -35,25 +37,33 @@ public class Contacto {
 	}
 
 
-	public ArrayList<Telefono> getTelefonos() {
+	public ArrayList<String> getTelefonos() {
 		return telefonos;
 	}
 
 
-	public void setTelefonos(ArrayList<Telefono> telefonos) {
+	public void setTelefonos(ArrayList<String> telefonos) {
 		this.telefonos = telefonos;
 	}
 
 
-	public ArrayList<Direccion> getDirecciones() {
+	public ArrayList<String[]> getDirecciones() {
 		return direcciones;
 	}
 
 
-	public void setDirecciones(ArrayList<Direccion> direcciones) {
+	public void setDirecciones(ArrayList<String[]> direcciones) {
 		this.direcciones = direcciones;
 	}
-
+	
+	public void addTelefono(String telefono) {
+		this.telefonos.add(telefono);
+	}
+	
+	public void addDireccion(String direccion, String codPostal, String localidad, String provNombre) {
+		String [] entrada = {direccion, codPostal, localidad, provNombre};
+		this.direcciones.add(entrada);
+	}
 
 	@Override
 	public String toString() {
@@ -67,5 +77,5 @@ public class Contacto {
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 }

@@ -14,6 +14,6 @@ public interface DireccionService {
 
 	void deleteDireccion(int id);
 
-	List<Direccion> getAllDireccions();
+	List<Direccion> getAllDirecciones();
 
 }

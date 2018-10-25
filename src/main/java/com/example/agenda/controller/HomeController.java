@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.example.agenda.model.*;
 import com.example.agenda.services.*;
 
@@ -19,14 +18,13 @@ import com.example.agenda.services.*;
 public class HomeController {
 
 	@Autowired
-	private PersonaService personaService;
-	private DireccionService direccionService;
+	private ContactoFactory personaService;
 	
 	@GetMapping("/agenda")
 	@CrossOrigin(origins = "http://localhost:4200")
 	
-    public Collection<Persona> ListadoCompleto() {
-        return personaService.getAllPersonas();
+    public Collection<Contacto> ListadoPersonas() {
+        return personaService.mostrarContactos();
 	}
 }
 	

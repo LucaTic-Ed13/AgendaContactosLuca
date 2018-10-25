@@ -48,6 +48,7 @@ public class Direccion {
 		this.idDireccion = idDireccion;
 	}
 
+	@Column(name = "direccion")
 	public String getDireccion() {
 		return direccion;
 	}
@@ -56,6 +57,7 @@ public class Direccion {
 		this.direccion = direccion;
 	}
 
+	@Column(name = "codpostal")
 	public String getCodPostal() {
 		return codPostal;
 	}
@@ -64,6 +66,7 @@ public class Direccion {
 		this.codPostal = codPostal;
 	}
 
+	@Column(name = "localidad")
 	public String getLocalidad() {
 		return localidad;
 	}
@@ -72,6 +75,7 @@ public class Direccion {
 		this.localidad = localidad;
 	}
 
+	@Column(name = "idprovincia")
 	public int getIdProvincia() {
 		return idProvincia;
 	}
@@ -80,6 +84,7 @@ public class Direccion {
 		this.idProvincia = idProvincia;
 	}
 
+	@Column(name = "idpersona")
 	public int getIdPersona() {
 		return idPersona;
 	}

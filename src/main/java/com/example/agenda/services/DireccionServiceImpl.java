@@ -1,5 +1,6 @@
 package com.example.agenda.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -38,8 +39,11 @@ public class DireccionServiceImpl implements DireccionService {
 
 	@Transactional
 	@Override
-	public List<Direccion> getAllDireccions() {
-		return repository.findAll();
+	public List<Direccion> getAllDirecciones() {
+		List<Direccion> prueba = new ArrayList<>();
+		prueba.add(new Direccion(0, "Hola", "Cara", "Cola", 1, 2));
+		prueba.addAll(repository.findAll());
+		return prueba;
 	}
 
 }
