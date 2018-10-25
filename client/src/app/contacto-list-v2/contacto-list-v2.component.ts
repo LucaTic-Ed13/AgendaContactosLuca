@@ -15,16 +15,14 @@ export class ContactoListV2Component implements OnInit {
   constructor(private contactoService: ContactoService, private contactoEditService: ContactoEditService, private giphyService: GiphyService) { }
 
   ngOnInit() {
-        //Implementa un patron Observer
-    //El metodo getAll está definido en beer.service.ts
+    
     this.contactoService.getAll().subscribe(
       data => {
         this.contactos = data;
 
         for (const contacto of this.contactos) {
-          console.log(contacto);
           this.giphyService.get(contacto.name).subscribe(url => contacto.giphyUrl = url);
-        }
+        } 
       },
       error => console.log(error)
     )

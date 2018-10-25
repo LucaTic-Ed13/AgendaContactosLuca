@@ -21,12 +21,10 @@ export class ContactoListComponent implements OnInit {
     this.contactoService.getAll().subscribe(
       data => {
         this.contactos = data;
-        //Con lo anterior bastaría. Ya se podrían ver las cervezas en el Front
-        //   pero si quiero añadir una iamgen a cada nombre uso un nuevo servicio
-        //Con este bucle añado una imagen a cada cerveza
-        for (const contacto of this.contactos) {
+
+        /* for (const contacto of this.contactos) {
           this.giphyService.get(contacto.name).subscribe(url => contacto.giphyUrl = url);
-        }
+        } */
       },
       error => console.log(error)
     )

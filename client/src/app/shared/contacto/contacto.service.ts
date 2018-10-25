@@ -5,14 +5,14 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 
 export class ContactoService {
-  public API = '//localhost:8080';
-  public CONTACTO_API = this.API + '/contactos';
+  public API = 'http://www.mocky.io/v2';
+  public CONTACTO_API = this.API + '/5bd21dc62f00002c33d8ff56';
 
   constructor(private http: HttpClient) {}
 
   // LISTADO
   getAll(): Observable<any> {
-    return this.http.get(this.API + '/agenda');
+    return this.http.get(this.CONTACTO_API);
   }
 }
 
