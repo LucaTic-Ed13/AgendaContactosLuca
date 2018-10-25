@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.EmbeddedId;
@@ -27,7 +28,10 @@ public class Contacto implements Serializable{
         @AttributeOverride(name="apellido1", column=@Column(name="apellido1")),
         @AttributeOverride(name="apellido2", column=@Column(name="apellido2"))
 	 })
-	//@OneToOne(mappedBy="idPersona")
+	@OneToOne(
+			mappedBy="idPersona",
+			cascade = CascadeType.ALL 
+			)
 	private Persona persona;
 	@MapsId("idPersona")
 	
@@ -35,14 +39,22 @@ public class Contacto implements Serializable{
 	@AttributeOverrides({
         @AttributeOverride(name="telefono", column=@Column(name="telefono"))
     })
+	@OneToMany(
+			mappedBy = "idPersona",
+	        cascade = CascadeType.ALL 
+	    )
 	//@OneToMany(mappedBy="idPersona")
 	private ArrayList <Telefono> telefonos;
 	
 	@Embedded
 	@AttributeOverrides({
         @AttributeOverride(name="direccion", column=@Column(name="direccion")),
-        @AttributeOverride(name="codPostal", column=@Column(name="codPostal"))
+        @AttributeOverride(name="codpostal", column=@Column(name="codPostal"))
     })
+	@OneToMany(
+			mappedBy = "idPersona",
+	        cascade = CascadeType.ALL
+	    )
 	//@OneToMany(mappedBy="idPersona")
 	private ArrayList <Direccion> direcciones;
 	
