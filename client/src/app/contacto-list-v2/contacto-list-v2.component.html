@@ -1,3 +1,20 @@
-<p>
-  contacto-list-v2 works!
-</p>
+<h2>Contacto List (Version v2)(Listado+Edit)</h2>
+<p>Esta es tu lista de contactos actual</p>
+<div class="botonSeparado"><button color="primary" [routerLink]="['/beer-add']">Add New Contacto</button></div>
+<div class="row mb-2">
+  <div *ngFor="let contacto of contactos; let i = index" class="col-md-6">
+    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+      <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 text-primary">Contacto {{i+1}}</strong>
+        <h3 class="mb-0">
+          <a class="text-dark" href="#">{{contacto.name}} </a>
+        </h3>
+        <div class="mb-1 text-muted">Nov {{i+13}}</div>
+        <p class="card-text mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio doloribus molestiae tenetur</p>
+          <a [routerLink]="['/beer-edit', beer.id]">Editar contacto {{contacto.name}}</a>       
+      </div>
+      <img class="card-img-right flex-auto d-none d-md-block" width="200" src="{{contacto.giphyUrl}}" alt="{{contacto.name}}" title="{{contacto.name}}">
+    </div>
+  </div>
+
+</div>
