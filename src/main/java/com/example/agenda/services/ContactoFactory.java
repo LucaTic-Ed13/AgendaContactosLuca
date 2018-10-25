@@ -13,18 +13,16 @@ public class ContactoFactory {
 	
 	@Autowired
 	PersonaServiceImpl persona = new PersonaServiceImpl();
-	//DireccionServiceImpl direccion = new DireccionServiceImpl();
+	DireccionServiceImpl direccion = new DireccionServiceImpl();
 	TelefonoServiceImpl telefono = new TelefonoServiceImpl();
 	ProvinciaServiceImpl provincia = new ProvinciaServiceImpl();
 	
-	public List<Contacto> mostrarContactos() {
+	public List<Contacto> getAllContactos() {
 		
 		System.out.println("Entro en mostrar");
 		ArrayList<Persona> humanidad = (ArrayList<Persona>) persona.getAllPersonas();
-		//ArrayList<Direccion> calles = (ArrayList<Direccion>) direccion.getAllDirecciones();
-		ArrayList<Direccion> calles = null;
-		//ArrayList<Telefono> celulares = (ArrayList<Telefono>) telefono.getAllTelefonos();
-		ArrayList<Telefono> celulares = null;
+		ArrayList<Direccion> calles = (ArrayList<Direccion>) direccion.getAllDirecciones();
+		ArrayList<Telefono> celulares = (ArrayList<Telefono>) telefono.getAllTelefonos();
 		ArrayList<Provincia> ejpania = (ArrayList<Provincia>) provincia.getAllProvincias();
 		System.out.println("Salgo de mostrar");
 		return coleccionContactos(humanidad, celulares, calles, ejpania);

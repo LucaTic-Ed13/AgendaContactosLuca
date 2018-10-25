@@ -18,13 +18,21 @@ import com.example.agenda.services.*;
 public class HomeController {
 
 	@Autowired
-	private ContactoFactory personaService;
+	private PersonaServiceImpl personaService;
+	private ContactoFactory contactoService;
+	
+	@GetMapping("/contactos")
+	@CrossOrigin(origins = "http://localhost:4200")
+	
+    public Collection<Contacto> ListadoContactos() {
+        return contactoService.getAllContactos();
+	}
 	
 	@GetMapping("/agenda")
 	@CrossOrigin(origins = "http://localhost:4200")
 	
-    public Collection<Contacto> ListadoPersonas() {
-        return personaService.mostrarContactos();
+    public Collection<Persona> ListadoPersonas() {
+        return personaService.getAllPersonas();
 	}
 }
 	
