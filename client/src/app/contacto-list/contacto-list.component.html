@@ -1,3 +1,35 @@
-<p>
-  contacto-list works!
-</p>
+<h2>Contacto List (Version v1) (Solo Listado)</h2>
+<p>Esta es la lista de contactos</p>
+
+
+<!--
+  ESTO ES LO BASICO
+  INCLUYO UNA IMAGEN CON UN SERVICIO DE GIPHY
+
+<div *ngFor="let b of beers">
+  {{b.name}}<br>
+  <img width="200" src="{{b.giphyUrl}}" alt="{{b.name}}">
+</div>
+
+-->
+
+<!-- Le doy una vuelta con Bootstrap-->
+<!-- Añado un contador-->
+<!-- https://blog.angular-university.io/angular-2-ngfor/-->
+
+<div class="row mb-2">
+  <div *ngFor="let c of contactos; let i = index" class="col-md-6">
+    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+      <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 text-primary">Contacto {{i+1}}</strong>
+        <h3 class="mb-0">
+          <a class="text-dark" href="#">{{c.name}} </a>
+        </h3>
+        <div class="mb-1 text-muted">Nov {{i+13}}</div>
+        <p class="card-text mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio doloribus molestiae tenetur</p>
+        <a href="#">Continue reading</a>
+      </div>
+      <img class="card-img-right flex-auto d-none d-md-block" width="200" src="{{c.giphyUrl}}" alt="{{c.name}}" title="{{c.name}}">
+    </div>
+  </div>
+</div>

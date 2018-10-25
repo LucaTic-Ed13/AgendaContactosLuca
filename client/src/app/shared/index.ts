@@ -1,4 +1,5 @@
 export *  from './contacto/contacto.service';
+export * from './giphy/giphy.service';
 //Para la version v2 ademas exporto este
 export * from './contacto-edit/contacto-edit.service';
 

@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactoEditService } from '../shared/contacto-edit/contacto-edit.service';
-import { ContactoService } from '../shared/contacto/contacto.service';
+import { ContactoService, ContactoEditService, GiphyService } from '../shared';
 
 @Component({
   selector: 'app-contacto-list-v2',
   templateUrl: './contacto-list-v2.component.html',
   styleUrls: ['./contacto-list-v2.component.css'],
-  providers: [ContactoService, ContactoEditService]
+  providers: [ContactoService, ContactoEditService, GiphyService]
 
 })
 export class ContactoListV2Component implements OnInit {
 
   contactos: Array<any>;
   
-  constructor(private contactoService, private contactoEditService: ContactoEditService) { }
+  constructor(private contactoService, private contactoEditService: ContactoEditService, private giphyService: GiphyService) { }
 
   ngOnInit() {
         //Implementa un patron Observer
@@ -21,6 +20,12 @@ export class ContactoListV2Component implements OnInit {
     this.contactoService.getAll().subscribe(
       data => {
         this.contactos = data;
+
+        for (const contacto of this.contactos) {
+          this.giphyService.get(contacto.name).subscribe(url => contacto.giphyUrl = url);
+        }
+
+
       },
       error => console.log(error)
     )

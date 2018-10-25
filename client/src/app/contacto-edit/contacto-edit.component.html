@@ -1,3 +1,26 @@
-<p>
-  contacto-edit works!
-</p>
+<div>
+  <form #contactoForm="ngForm" (ngSubmit)="save(contactoForm.value)">
+    <header>
+      <h2>{{contacto.name ? 'Edit' : 'Add'}} Contacto</h2>
+    </header>
+    <div>
+      <input type="hidden" name="href" [(ngModel)]="contacto.href">
+      <div>
+        <input placeholder="Contacto Name" [(ngModel)]="contacto.name"
+               required name="name" #name>
+      </div>
+    </div>
+    <div>
+      <button color="primary" type="submit"
+              [disabled]="!contactoForm.form.valid">Save</button>
+      <button color="secondary" (click)="remove(contacto.href)"
+              *ngIf="contacto.href" type="button">Delete</button>
+      <a routerLink="/contacto-list">Cancel</a>
+    </div>
+    <footer>
+      <div class="giphy">
+        <img src="{{contacto.giphyUrl}}" alt="{{contacto.name}}">
+      </div>
+    </footer>
+  </form>
+</div>
