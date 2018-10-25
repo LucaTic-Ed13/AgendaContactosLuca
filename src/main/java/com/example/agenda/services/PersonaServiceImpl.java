@@ -17,28 +17,28 @@ public class PersonaServiceImpl implements PersonaService {
 	PersonaDAOJPA repository;
 
 	@Override
-	public Persona getContactoById(int id) {
+	public Persona getPersonaById(int id) {
     	return repository.getOne(id);
 	}
 
 	@Override
-	public void saveContacto(Persona persona) {
+	public void savePersona(Persona persona) {
 		repository.save(persona);
 	}
 
 	@Override
-	public void updateContacto(Persona persona) {
+	public void updatePersona(Persona persona) {
 		repository.save(persona);
 	}
 
 	@Override
-	public void deleteContacto(int id) {
+	public void deletePersona(int id) {
 		repository.deleteById(id);
 	}
 
 	@Transactional
 	@Override
-	public List<Persona> getAllContactos() {
+	public List<Persona> getAllPersonas() {
 		return repository.findAll();
 	}
 

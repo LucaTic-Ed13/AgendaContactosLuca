@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import com.example.agenda.model.Persona;
-//import com.example.agenda.dao.PersonaDAOJPA;
-import com.example.agenda.services.PersonaService;
+import com.example.agenda.model.*;
+import com.example.agenda.services.*;
 
 
 @RestController
@@ -21,11 +20,13 @@ public class HomeController {
 
 	@Autowired
 	private PersonaService personaService;
+	private DireccionService direccionService;
 	
 	@GetMapping("/agenda")
 	@CrossOrigin(origins = "http://localhost:4200")
+	
     public Collection<Persona> ListadoCompleto() {
-        return personaService.getAllContactos();
+        return personaService.getAllPersonas();
 	}
 }
 	
