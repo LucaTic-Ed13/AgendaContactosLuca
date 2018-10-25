@@ -17,7 +17,7 @@ const appRoutes: Routes =  [
   },
   {
     path: 'contacto-list',
-    component: ContactoListComponent
+    component: ContactoListV2Component
   },
   {
     path: 'contacto-add',
