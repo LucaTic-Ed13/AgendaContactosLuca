@@ -43,7 +43,7 @@ public class Contacto implements Serializable{
 	@Embedded
 	@AttributeOverrides({
         @AttributeOverride(name="direccion", column=@Column(name="direccion")),
-        @AttributeOverride(name="codPostal", column=@Column(name="codPostal"))
+        @AttributeOverride(name="codpostal", column=@Column(name="codPostal"))
     })
 	//@OneToMany(mappedBy="idPersona")
 	private ArrayList <Direccion> direcciones;
