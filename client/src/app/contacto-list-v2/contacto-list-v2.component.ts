@@ -22,6 +22,7 @@ export class ContactoListV2Component implements OnInit {
         this.contactos = data;
 
         for (const contacto of this.contactos) {
+          console.log(contacto);
           this.giphyService.get(contacto.name).subscribe(url => contacto.giphyUrl = url);
         }
       },
