@@ -22,26 +22,30 @@ public class Contacto implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	@EmbeddedId
 	@AttributeOverrides({
         @AttributeOverride(name="nombre", column=@Column(name="nombre")),
         @AttributeOverride(name="apellido1", column=@Column(name="apellido1")),
-        @AttributeOverride(name="apellido2", column=@Column(name="apellido2")),
-        @AttributeOverride(name="direccion", column=@Column(name="direccion")),
-        @AttributeOverride(name="codPostal", column=@Column(name="codPostal")),
-        @AttributeOverride(name="telefono", column=@Column(name="telefono"))
-    })
-	
-	@EmbeddedId
-	@OneToOne(mappedBy="idPersona")
+        @AttributeOverride(name="apellido2", column=@Column(name="apellido2"))
+	 })
+	//@OneToOne(mappedBy="idPersona")
 	private Persona persona;
 	@MapsId("idPersona")
 	
 	@Embedded
-	@OneToMany(mappedBy="idPersona")
+	@AttributeOverrides({
+        @AttributeOverride(name="telefono", column=@Column(name="telefono"))
+    })
+	//@OneToMany(mappedBy="idPersona")
 	private ArrayList <Telefono> telefonos;
 	
 	@Embedded
-	@OneToMany(mappedBy="idPersona")
+	@AttributeOverrides({
+        @AttributeOverride(name="direccion", column=@Column(name="direccion")),
+        @AttributeOverride(name="codPostal", column=@Column(name="codPostal"))
+    })
+	//@OneToMany(mappedBy="idPersona")
 	private ArrayList <Direccion> direcciones;
 	
 	

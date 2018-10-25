@@ -17,7 +17,7 @@ public class Persona {
 	
 	@Id
 	@GeneratedValue
-	@OneToOne
+	//@OneToOne
 	private int idPersona;
 	private String nombre;
 	private String apellido1;

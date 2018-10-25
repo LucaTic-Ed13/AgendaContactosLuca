@@ -22,10 +22,8 @@ public class Telefono {
 	@Id
 	@GeneratedValue
 	private int idTelefono;
-	
 	private String telefono;
-	
-	@ManyToOne
+	//@ManyToOne
 	private int idPersona;
 	
 	

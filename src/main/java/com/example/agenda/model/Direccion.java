@@ -28,7 +28,7 @@ public class Direccion {
 	private String codPostal;
 	private String localidad;
 	private int idProvincia;
-	@ManyToOne
+	//@ManyToOne
 	private int idPersona;
 	
 	public Direccion(int idDireccion, String direccion, String codPostal, String localidad, int idProvincia, int idPersona) {
