@@ -12,7 +12,7 @@ export class ContactoService {
 
   // LISTADO
   getAll(): Observable<any> {
-    return this.http.get(this.API + '/good-contactos');
+    return this.http.get(this.API + '/mis-contactos');
   }
 }
 
