@@ -1,11 +1,18 @@
 package com.example.agenda.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /*
   `idtelefono` int(11) NOT NULL AUTO_INCREMENT,
   `telefono` varchar(45) DEFAULT NULL,
   `idpersona` int(11) DEFAULT NULL,
  */
-
+@Entity
+@Table(name = "telefono")
 public class Telefono {
 	
 	private int idTelefono;
@@ -21,6 +28,9 @@ public class Telefono {
 	
 	public Telefono() {}
 
+	@Id
+	@GeneratedValue
+	@Column(name = "idtelefono")
 	public int getIdTelefono() {
 		return idTelefono;
 	}

@@ -22,17 +22,10 @@ public class HomeController {
 	@Autowired
 	private PersonaService personaService;
 	
-	
-	
-	
 	@GetMapping("/agenda")
-	  @CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://localhost:4200")
     public Collection<Persona> ListadoCompleto() {
-
-        return personaService
-        		.getAllContactos();
-        		
-		
+        return personaService.getAllContactos();
 	}
 }
 	

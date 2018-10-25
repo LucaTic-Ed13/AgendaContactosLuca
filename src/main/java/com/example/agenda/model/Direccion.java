@@ -1,4 +1,11 @@
 package com.example.agenda.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /*
   `iddireccion` int(11) NOT NULL AUTO_INCREMENT,
   `direccion` varchar(45) NOT NULL,
@@ -7,6 +14,8 @@ package com.example.agenda.model;
   `idprovincia` int(11) NOT NULL,
   `idpersona` int(11) DEFAULT NULL,
  */
+@Entity
+@Table(name = "direccion")
 public class Direccion {
 	
 	private int idDireccion;
@@ -28,6 +37,9 @@ public class Direccion {
 	
 	public Direccion() {}
 
+	@Id
+	@GeneratedValue
+	@Column(name = "iddireccion")
 	public int getIdDireccion() {
 		return idDireccion;
 	}
